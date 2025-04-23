@@ -145,13 +145,15 @@
             width: min-content;
         }
         .anchors {
+            cursor: pointer;
             display: flex;
             gap: 0.25rem;
-            cursor: pointer;
+            
             margin-bottom: 0.5rem;
         }
 
         .dash {
+            cursor: pointer;
             width: clamp(10px, 20px,18%);
             height: 10px;
             border-radius: 4px;
@@ -302,10 +304,10 @@
                 });
             });
 
-            document.querySelectorAll('.scale').forEach(scale => {
-                const i = +scale.dataset.index;
-                const field = scale.dataset.field;
-                scale.querySelectorAll('.dash').forEach((dash, idx) => {
+            document.querySelectorAll('.anchors').forEach(anchor => {
+                const i = +anchor.dataset.index;
+                const field = anchor.dataset.field;
+                anchor.querySelectorAll('.dash').forEach((dash, idx) => {
                     dash.onclick = () => {
                         const value = idx + 1;
                         if (observations[i][field] === value) {
